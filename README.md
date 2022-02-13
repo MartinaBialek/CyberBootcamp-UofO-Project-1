@@ -13,9 +13,8 @@ These files have been tested and used to generate a live ELK deployment on Azure
 - Description of the Topology
 - Access Policies
 - ELK Configuration
-- Beats in Use
-- Machines Being Monitored
-- How to Use the Ansible Build
+- Target Machines and Beats
+- Using a Playbook
 
 ### Description of the Topology
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
@@ -45,7 +44,7 @@ The configuration details of each machine may be found below:
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the **jump box provisioner** machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-**- 5061 Kibana Port**
+- **5061 Kibana Port**
 
 Machines within the network can only be accessed by the **jump box provisioner**.
 
@@ -102,10 +101,11 @@ We have installed the following Beats on these machines:
 - _TODO: Specify which Beats you successfully installed_
 
 These Beats allow us to collect the following information from each machine:
-- **Filebeat** - collects data about the file system
-- **Metricbeat** - collects machine metrics, such as uptime
 
 - _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+
+- **Filebeat** - collects data about the file system
+- **Metricbeat** - collects machine metrics, such as uptime
 
 
 ### Using the Playbook
