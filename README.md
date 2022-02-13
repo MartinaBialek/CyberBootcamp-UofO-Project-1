@@ -10,7 +10,7 @@ Alternatively, select portions of the **YAML** file may be used to install only 
 
 - [ELK-Install.yml](https://github.com/MartinaBialek/CyberBootcamp-UofO-Project-1/blob/ab7475d51289cb04ee9b21ba2ed2c981a5d687f6/Ansible/install-elk.yml)
  
-** This document contains the following details:**
+**This document contains the following details:**
 
 - Description of the Topology
 - Access Policies
@@ -25,7 +25,7 @@ Load balancing ensures that the application will be highly **available**, in add
 
 - What aspect of security do load balancers protect? What is the advantage of a jump box?
 
-- The off-loading function of a **load balancer** defends an organization against distributed denial-of-service (DDoS) attacks. It does this by shifting attack traffic from the corporate server to a public cloud provider.
+- The off-loading function of a **load balancer** defends an organization against distributed denial-of-service (DDoS) attacks. A **jump box** ensures that your network has continous support and is a more doable solution when a user either has no direct office or data center access.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the **jump box** and system **network**.
 
@@ -102,12 +102,12 @@ We have installed the following Beats on these machines:
 
 -**Microbeat**: which is a lightweight shipper that you can install on your servers to periodically collect metrics from the operating system and from services running on the server. 
 
--Specify which Beats you successfully installed:
+-Also successfully installing:
 - Microbeat
 - Filebeat
 - Metricbeat
 
-These Beats allow us to collect the following information from each machine:
+These Beats allow us to collect the following information from each machine in the following ways:
 
 - **Filebeat** - monitors the log files or locations that you specify, collects log events, and forwards them either to Elasticsearch or Logstash for indexing.
 - **Metricbeat** - takes the metrics and statistics that it collects and ships them to the output that you specify, such as Elasticsearch or Logstash.
