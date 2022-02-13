@@ -66,7 +66,11 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 
 - _TODO: What is the main advantage of automating configuration with Ansible?
 - 
--
+- Flexible/Customizable: You can create a customizable environment regardless of where it is deployed.  
+- Free: Operates as an open-source tool.
+- Accessible: You do not neet to install any additional software for Ansible to perform its tasks. 
+- Powerful: Ansible allows you to model highly complex IT workflows.
+
 The playbook implements the following tasks:
 
 - Configure Elk VM with Docker
@@ -84,9 +88,7 @@ The following screenshot displays the result of running `docker ps` after succes
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
 
-- _TODO: List the IP addresses of the machines you are monitoring_
-- 
-This ELK server is configured to monitor the following machines: -Private IPs of Web-1, Web-2, Web-3
+- This ELK server is configured to monitor the following machines: -Private IPs of Web-1, Web-2, Web-3
 
 | Name     |    IP Addresses     |
 |----------|---------------------|
@@ -94,15 +96,17 @@ This ELK server is configured to monitor the following machines: -Private IPs of
 |  Web-2   | 10.0.0.7            |
 |  Web-3   | 10.0.0.8            |
 
+
 We have installed the following Beats on these machines:
 
--**Microbeats**
+-**Microbeat**: is a lightweight shipper that you can install on your servers to periodically collect metrics from the operating system and from services running on the server. Metricbeat takes the metrics and statistics that it collects and ships them to the output that you specify, such as Elasticsearch or Logstash.
 
-- _TODO: Specify which Beats you successfully installed_
+-Specify which Beats you successfully installed:
+- Microbeat
+- Filebeat
+- Metricbeat
 
 These Beats allow us to collect the following information from each machine:
-
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
 
 - **Filebeat** - collects data about the file system
 - **Metricbeat** - collects machine metrics, such as uptime
