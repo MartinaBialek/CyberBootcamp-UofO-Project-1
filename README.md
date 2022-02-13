@@ -6,7 +6,7 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the **YAML** file may be used to install only certain pieces of it, such as Filebeat.
 
-- [ELK-Install.yml] (https://github.com/MartinaBialek/CyberBootcamp-UofO-Project-1/blob/ab7475d51289cb04ee9b21ba2ed2c981a5d687f6/Ansible/install-elk.yml)
+- [ELK-Install.yml](https://github.com/MartinaBialek/CyberBootcamp-UofO-Project-1/blob/ab7475d51289cb04ee9b21ba2ed2c981a5d687f6/Ansible/install-elk.yml)
  
  This document contains the following details:
 
@@ -20,7 +20,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 Load balancing ensures that the application will be highly **available**, in addition to restricting **in-bound access** to the network.
 
-- What aspect of security do load balancers protect? What is the advantage of a jump box?_
+- What aspect of security do load balancers protect? What is the advantage of a jump box?
 
 - The off-loading function of a **load balancer** defends an organization against distributed denial-of-service (DDoS) attacks. It does this by shifting attack traffic from the corporate server to a public cloud provider.
 
@@ -48,8 +48,8 @@ Only the **jump box provisioner** machine can accept connections from the Intern
 
 Machines within the network can only be accessed by the **jump box provisioner**.
 
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?
-- My IP Address: 50.45.135.213
+**Which machine did you allow to access your ELK VM? What was its IP address?
+- IP Address of the Azadmin/Sysadmin machine
 
 A summary of the access policies in place can be found in the table below:
 
@@ -64,14 +64,14 @@ A summary of the access policies in place can be found in the table below:
 ### Elk Configuration
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
 
-- _TODO: What is the main advantage of automating configuration with Ansible?
-- 
+**- What is the main advantage of automating configuration with Ansible?** 
+
 - Flexible/Customizable: You can create a customizable environment regardless of where it is deployed.  
 - Free: Operates as an open-source tool.
 - Accessible: You do not neet to install any additional software for Ansible to perform its tasks. 
 - Powerful: Ansible allows you to model highly complex IT workflows.
 
-The playbook implements the following tasks:
+**The playbook implements the following tasks:** 
 
 - Configure Elk VM with Docker
 - Install docker.io
@@ -83,6 +83,7 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 ![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+![docker_ps_output png](https://user-images.githubusercontent.com/99365720/153774894-15b688ee-9a47-4489-9029-d9f41e13fc4c.png)
 
 
 ### Target Machines & Beats
@@ -108,8 +109,8 @@ We have installed the following Beats on these machines:
 
 These Beats allow us to collect the following information from each machine:
 
-- **Filebeat** - collects data about the file system
-- **Metricbeat** - collects machine metrics, such as uptime
+- **Filebeat** - Filebeat monitors the log files or locations that you specify, collects log events, and forwards them either to Elasticsearch or Logstash for indexing.
+- **Metricbeat** - Metricbeat takes the metrics and statistics that it collects and ships them to the output that you specify, such as Elasticsearch or Logstash.
 
 
 ### Using the Playbook
