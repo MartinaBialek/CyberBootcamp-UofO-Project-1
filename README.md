@@ -169,3 +169,12 @@ ansible-playbook Playbook-name.yml
 6. Navigate to **Kibana** to check that the installation worked as expected.
 
 http://[Host IP]/app/kibana#/home
+
+
+
+
+
+
+**filebeat-system-module.png**
+
+![filebeat-system-module](https://user-images.githubusercontent.com/99365720/153778056-8b7129c2-69bf-48a6-acb1-479f85da650e.png)
