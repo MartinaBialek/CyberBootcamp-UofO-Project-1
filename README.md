@@ -123,26 +123,39 @@ In order to use the playbook, you will need to have an Ansible control node alre
 1. SSH into the control node and follow the steps below to access Filebeat playbook:
 
 2. Copy the **playbook** file to the **Ansible** directory.
--cd /etc/ansible
--mkdir files
--curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-8.0.0-amd64.deb
+
+cd /etc/ansible
+
+mkdir files
+
+curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-8.0.0-amd64.deb
 
 3. Update the **hosts** file to include webserver and ELK VM.
--cd /etc/ansible
--nano hosts (edit file)
--[webservers]
--10.0.0.6  
--10.0.0.7  
--10.0.0.8
 
--[elk]
--10.1.0.7
+
+cd /etc/ansible
+
+nano hosts (edit file)
+
+[webservers]
+
+10.0.0.6  
+10.0.0.7  
+10.0.0.8
+
+
+[elk]
+
+10.1.0.7
 
 4. **Create** playbook:
-- nano Playbook-name.yml
+
+nano Playbook-name.yml
 
 5. **Run** the playbook:
-- ansible-playbook Playbook-name.yml
+
+ansible-playbook Playbook-name.yml
 
 6. Navigate to **Kibana** to check that the installation worked as expected.
-- http://[Host IP]/app/kibana#/home
+
+http://[Host IP]/app/kibana#/home
