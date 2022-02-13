@@ -23,7 +23,7 @@ Alternatively, select portions of the **YAML** file may be used to install only 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 Load balancing ensures that the application will be highly **available**, in addition to restricting **in-bound access** to the network.
 
-- What aspect of security do load balancers protect? What is the advantage of a jump box?
+What aspect of security do load balancers protect? What is the advantage of a jump box?
 
 - The off-loading function of a **load balancer** defends an organization against distributed denial-of-service (DDoS) attacks. A **jump box** ensures that your network has continous support and is a more doable solution when a user either has no direct office or data center access.
 
@@ -51,7 +51,7 @@ Only the **jump box provisioner** machine can accept connections from the Intern
 
 Machines within the network can only be accessed by the **jump box provisioner**.
 
-**Which machine did you allow to access your ELK VM? What was its IP address?
+**Which machine did you allow to access your ELK VM? What was its IP address?**
 - IP Address of the Azadmin/Sysadmin machine
 - IP Address: 50.45.135.213
 
@@ -89,7 +89,7 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ### Target Machines & Beats
 
-- This ELK server is configured to monitor the following machines: -Private IPs of Web-1, Web-2, Web-3
+This ELK server is configured to monitor the following machines: -Private IPs of Web-1, Web-2, Web-3
 
 | Name     |    IP Addresses     |
 |----------|---------------------|
@@ -102,7 +102,7 @@ We have installed the following Beats on these machines:
 
 -**Microbeat**: which is a lightweight shipper that you can install on your servers to periodically collect metrics from the operating system and from services running on the server. 
 
--Also successfully installing:
+-Also successfully installed:
 - Microbeat
 - Filebeat
 - Metricbeat
@@ -113,24 +113,36 @@ These Beats allow us to collect the following information from each machine in t
 - **Metricbeat** - takes the metrics and statistics that it collects and ships them to the output that you specify, such as Elasticsearch or Logstash.
 
 ### Using the Playbook
+
+Playbooks for [Filebeat](https://github.com/MartinaBialek/CyberBootcamp-UofO-Project-1/blob/0042ece19b85cb12278a9cf4ff4aad3faac4eb5a/Ansible/filebeat-playbook.yml) and [Metricbeat](https://github.com/MartinaBialek/CyberBootcamp-UofO-Project-1/blob/0042ece19b85cb12278a9cf4ff4aad3faac4eb5a/Ansible/metricbeat-playbook.yml) are can be also found here.
+
+- You can edit the filebeat.config and metricbeat.config files to specify which hosts the playbook would run on.
+
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
-SSH into the control node and follow the steps below:
+1. SSH into the control node and follow the steps below to access Filebeat playbook:
 
-- Copy the **playbook** file to the **Ansible** directory.
+2. Copy the **playbook** file to the **Ansible** directory.
+cd /etc/ansible
+mkdir files
+curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-8.0.0-amd64.deb
 
-- Update the **hosts** file to include webserver and ELK VM.
+3. Update the **hosts** file to include webserver and ELK VM.
+cd /etc/ansible
+nano hosts (edit file)
+[webservers]
+10.0.0.6  
+10.0.0.7  
+10.0.0.8
 
-- Run the playbook, and navigate to **Kibana** to check that the installation worked as expected.
+[elk]
+10.1.0.7
 
+4. **Create** playbook:
+nano Playbook-name.yml
 
-_TODO: Answer the following questions to fill in the blanks:_
+5. **Run** the playbook:
+ansible-playbook Playbook-name.yml
 
-- _Which file is the playbook? Where do you copy it?_
-- 
-- 
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- 
-- _Which URL do you navigate to in order to check that the ELK server is running?
-
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+6. Navigate to **Kibana** to check that the installation worked as expected.
+http://[Host IP]/app/kibana#/home
