@@ -4,23 +4,22 @@ The files in this repository were used to configure the network depicted below.
 ![NetworkDiagram](https://user-images.githubusercontent.com/99365720/153497900-453d44be-7c24-480e-83ef-07ad874bae6a.png)
 
 
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the **YAML** file may be used to install only certain pieces of it, such as Filebeat.
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
-
-![ELK-Install.yml] (https://github.com/MartinaBialek/CyberBootcamp-UofO-Project-1/blob/ab7475d51289cb04ee9b21ba2ed2c981a5d687f6/Ansible/install-elk.yml)
+[ELK-Install.yml] (https://github.com/MartinaBialek/CyberBootcamp-UofO-Project-1/blob/ab7475d51289cb04ee9b21ba2ed2c981a5d687f6/Ansible/install-elk.yml)
  
+ This document contains the following details:
 
-This document contains the following details:
-- Description of the Topologu
-- Access Policies
-- ELK Configuration
-  - Beats in Use
-  - Machines Being Monitored
-- How to Use the Ansible Build
-- 
+-Description of the Topology
+-Access Policies
+-ELK Configuration
+-Beats in Use
+-Machines Being Monitored
+-How to Use the Ansible Build
+
 ### Description of the Topology
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
-Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
+Load balancing ensures that the application will be highly **available**, in addition to restricting **in-bound access** to the network.
 
 - _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
 - 
