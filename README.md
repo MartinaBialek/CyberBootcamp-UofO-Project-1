@@ -9,6 +9,8 @@ These files have been tested and used to generate a live ELK deployment on Azure
 Alternatively, select portions of the **YAML** file may be used to install only certain pieces of it, such as Filebeat.
 
 - [ELK-Install.yml](https://github.com/MartinaBialek/CyberBootcamp-UofO-Project-1/blob/ab7475d51289cb04ee9b21ba2ed2c981a5d687f6/Ansible/install-elk.yml)
+- [Filebeat-playbook.yml](https://github.com/MartinaBialek/CyberBootcamp-UofO-Project-1/blob/9b6c661e16864902b8fa4cbec37bf6c0acb713e8/Ansible/filebeat-playbook.yml)
+- [Metricbeat-playbook.yml](https://github.com/MartinaBialek/CyberBootcamp-UofO-Project-1/blob/9b6c661e16864902b8fa4cbec37bf6c0acb713e8/Ansible/metricbeat-playbook.yml)
  
 **This document contains the following details:**
 
@@ -20,12 +22,12 @@ Alternatively, select portions of the **YAML** file may be used to install only 
 
 ### Description of the Topology
 
-The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
+The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the _D*mn Vulnerable Web Application_.
 Load balancing ensures that the application will be highly **available**, in addition to restricting **in-bound access** to the network.
 
 What aspect of security do load balancers protect? What is the advantage of a jump box?
 
-- The off-loading function of a **load balancer** defends an organization against distributed denial-of-service (DDoS) attacks. A **jump box** ensures that your network has continous support and is a more doable solution when a user either has no direct office or data center access.
+- The off-loading function of a **load balancer** defends an organization against distributed denial-of-service (DDoS) attacks. A **jump box** ensures that your network has continous support this is also a more doable solution when a user either has no direct office or data center access.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the **jump box** and system **network**.
 
@@ -59,7 +61,7 @@ Machines within the network can only be accessed by the **jump box provisioner**
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box |    Yes              | 50.45.135.213        |
+| Jump Box |    No               | 50.45.135.213        |
 |  Web-1   |    No               | 10.0.0.6             |
 |  Web-2   |    No               | 10.0.0.7             |
 |  Web-3   |    No               | 10.0.0.8             |
@@ -68,10 +70,10 @@ Machines within the network can only be accessed by the **jump box provisioner**
 ### Elk Configuration
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous in the following ways:
 
-- Flexible/Customizable: You can create a customizable environment regardless of where it is deployed.  
-- Free: Operates as an open-source tool.
-- Accessible: You do not neet to install any additional software for Ansible to perform its tasks. 
-- Powerful: Ansible allows you to model highly complex IT workflows.
+- **Flexible/Customizable:** You can create a customizable environment regardless of where it is deployed.  
+- **Free:** Operates as an open-source tool.
+- **Accessible:** You do not neet to install any additional software for Ansible to perform its tasks. 
+- **Powerful:** Ansible allows you to model highly complex IT workflows.
 
 **The playbook implements the following tasks:** 
 
@@ -89,7 +91,9 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ### Target Machines & Beats
 
-This ELK server is configured to monitor the following machines: -Private IPs of Web-1, Web-2, Web-3
+This ELK server is configured to monitor the following machines: 
+
+- Private IPs of Web-1, Web-2, Web-3
 
 | Name     |    IP Addresses     |
 |----------|---------------------|
@@ -102,7 +106,7 @@ We have installed the following Beats on these machines:
 
 -**Microbeat**: which is a lightweight shipper that you can install on your servers to periodically collect metrics from the operating system and from services running on the server. 
 
-Also successfully installed:
+**Also successfully installed:**
 - Microbeat
 - Filebeat
 - Metricbeat
@@ -116,7 +120,7 @@ These Beats allow us to collect the following information from each machine in t
 
 Playbooks for [Filebeat](https://github.com/MartinaBialek/CyberBootcamp-UofO-Project-1/blob/0042ece19b85cb12278a9cf4ff4aad3faac4eb5a/Ansible/filebeat-playbook.yml) and [Metricbeat](https://github.com/MartinaBialek/CyberBootcamp-UofO-Project-1/blob/0042ece19b85cb12278a9cf4ff4aad3faac4eb5a/Ansible/metricbeat-playbook.yml) are can be also found here.
 
-- You can edit the filebeat.config and metricbeat.config files to specify which hosts the playbook would run on.
+- You can edit the **filebeat.config** and **metricbeat.config** files to specify which hosts the playbook would run on.
 
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
