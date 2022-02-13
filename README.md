@@ -86,7 +86,10 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 - Enable service docker on boot
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
-![docker_ps_output png](https://user-images.githubusercontent.com/99365720/153774894-15b688ee-9a47-4489-9029-d9f41e13fc4c.png)
+![docker_ps_output png![docker-ps-output](https://user-images.githubusercontent.com/99365720/153777919-44509351-38ed-4185-98c3-58e25fbf5348.png)
+
+filebeat-system-module.png![filebeat-system-module](https://user-images.githubusercontent.com/99365720/153777933-018f3eba-491c-4b38-9f03-d24309059cee.png)
+
 
 
 ### Target Machines & Beats
