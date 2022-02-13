@@ -21,14 +21,17 @@ These files have been tested and used to generate a live ELK deployment on Azure
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 Load balancing ensures that the application will be highly **available**, in addition to restricting **in-bound access** to the network.
 
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
-- 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
+- What aspect of security do load balancers protect? What is the advantage of a jump box?_
 
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
-The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
+- The off-loading function of a **load balancer** defends an organization against distributed denial-of-service (DDoS) attacks. It does this by shifting attack traffic from the corporate server to a public cloud provider.
+
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the **jump box** and system **network**.
+
+- **Filebeat** monitors the log files or locations that you specify, collects log events, and forwards them either to Elasticsearch or Logstash for indexing.
+
+- **Metricbeat** takes the metrics and statistics that it collects and ships them to the output that you specify, such as Elasticsearch or Logstash. 
+
+The configuration details of each machine may be found below:
 
 | Name     | Function | IP Address | Operating System|
 |----------|----------|------------|-----------------|
@@ -41,17 +44,19 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 ### Access Policies
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+Only the **jump box provisioner** machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+**- 5061 Kibana Port**
 
-Machines within the network can only be accessed by _____.
+Machines within the network can only be accessed by the **jump box provisioner**.
 
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?
+- My IP Address: 50.45.135.213
 
-A summary of the access policies in place can be found in the table below.
+A summary of the access policies in place can be found in the table below:
+
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.5             |
+| Jump Box |    Yes              | 50.45.135.213        |
 |  Web-1   |    No               | 10.0.0.6             |
 |  Web-2   |    No               | 10.0.0.7             |
 |  Web-3   |    No               | 10.0.0.8             |
@@ -60,7 +65,8 @@ A summary of the access policies in place can be found in the table below.
 ### Elk Configuration
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
 
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+- _TODO: What is the main advantage of automating configuration with Ansible?
+- 
 -
 The playbook implements the following tasks:
 
@@ -96,8 +102,8 @@ We have installed the following Beats on these machines:
 - _TODO: Specify which Beats you successfully installed_
 
 These Beats allow us to collect the following information from each machine:
--**Filebeat** - collects data about the file system
--**Metricbeat** - collects machine metrics, such as uptime
+- **Filebeat** - collects data about the file system
+- **Metricbeat** - collects machine metrics, such as uptime
 
 - _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
 
