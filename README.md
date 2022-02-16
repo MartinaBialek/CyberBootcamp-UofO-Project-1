@@ -134,9 +134,10 @@ In order to use the playbook, you will need to have an Ansible control node alre
 SSH into the control node and follow the steps below to access Filebeat playbook:
  
 1. Copy the **playbook** file to the **Ansible** directory.
-   cd /etc/ansible
+
+   ```cd /etc/ansible
    mkdir files
-   curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-8.0.0-amd64.deb
+   curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-8.0.0-amd64.deb```
 
 2. Update the **hosts** file to include webserver and ELK VM.
    cd /etc/ansible
@@ -160,11 +161,3 @@ SSH into the control node and follow the steps below to access Filebeat playbook
 - The playbook is Install-elk.yml and copy it to /etc/ansible.
 - In the ansible.cfg file add the elk_vm ip address to monitor under the [webservers] to monitor it and place the elk ip address under [elk] which indicates that the destination where the elk has to be installed on.
 - Navigate to kibana to check that the installation worked as expected: http://[Elk-Serve-IP]:5601/app/kibana
-
-
-
-
-
-
-
-![filebeat-system-module](https://user-images.githubusercontent.com/99365720/153778056-8b7129c2-69bf-48a6-acb1-479f85da650e.png)
