@@ -135,11 +135,11 @@ SSH into the control node and follow the steps below to access Filebeat playbook
  
 1. Copy the **playbook** file to the **Ansible** directory.
 
-   ```cd /etc/ansible```
+```cd /etc/ansible```
    
-   ```mkdir files```
+```mkdir files```
    
-   ```curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-8.0.0-amd64.deb```
+```curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-8.0.0-amd64.deb```
 
 2. Update the **hosts** file to include webserver and ELK VM.
 
